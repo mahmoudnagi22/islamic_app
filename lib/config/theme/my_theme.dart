@@ -27,6 +27,13 @@ class MyTheme {
       showSelectedLabels: true,
       elevation: 20,
     ),
+    bottomSheetTheme: BottomSheetThemeData(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(14),
+      ),
+      elevation: 20,
+      backgroundColor: Colors.white,
+    ),
     textTheme: TextTheme(
       titleSmall: TextStyle(
         fontSize: 25,
@@ -38,6 +45,17 @@ class MyTheme {
         color: Colors.black,
         fontWeight: FontWeight.w400,
       ),
+      displaySmall: TextStyle(
+        fontSize: 14,
+        fontWeight: FontWeight.w400,
+        color: Colors.black,
+      ),
+      labelSmall: TextStyle(
+          fontSize: 18, color: Colors.black, fontWeight: FontWeight.w700),
+      bodyMedium: TextStyle(
+          fontWeight: FontWeight.w700,
+          fontSize: 22,
+          color: ColorsManager.goldeColor),
     ),
   );
 }
