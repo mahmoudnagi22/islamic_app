@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       routes: {
         RoutesManager.quranDetailsRoutName: (_) => QuranDetailsScreen(),
         RoutesManager.hadithDetailsRoutName: (_) => HadithDetails(),
@@ -19,7 +20,9 @@ class MyApp extends StatelessWidget {
         RoutesManager.splashName: (_) => SplashScreen(),
       },
       initialRoute: RoutesManager.splashName,
+      darkTheme: MyTheme.DarkTheme,
       theme: MyTheme.LigthTheme,
+      themeMode: ThemeMode.light,
     );
   }
 }

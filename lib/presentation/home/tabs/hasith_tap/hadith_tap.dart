@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami_app_r/core/utils/images_manager.dart';
-import 'package:islami_app_r/core/utils/stringes_manager.dart';
 import 'package:islami_app_r/presentation/home/tabs/hasith_tap/widgets/hadithTitelWidget.dart';
 import 'package:islami_app_r/presentation/home/tabs/hasith_tap/widgets/hadith_headar_name.dart';
 
@@ -34,9 +33,9 @@ class _HadithTapState extends State<HadithTap> {
             child: ListView.separated(
               separatorBuilder: (context, index) => Container(
                 margin: EdgeInsets.symmetric(
-                  horizontal: 20,
+                  horizontal: 8,
                 ),
-                color: Theme.of(context).primaryColor,
+                color: Theme.of(context).dividerColor,
                 height: 2,
               ),
               itemBuilder: (context, index) =>
