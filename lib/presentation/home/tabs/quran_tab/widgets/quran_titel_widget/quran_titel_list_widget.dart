@@ -11,7 +11,7 @@ class QuranTitelListWidget extends StatelessWidget {
         decoration: BoxDecoration(
           border: Border.symmetric(
             horizontal: BorderSide(
-              color: Color(0XFFB7935F),
+              color: Theme.of(context).dividerColor,
               width: 3,
             ),
           ),
@@ -31,7 +31,7 @@ class QuranTitelListWidget extends StatelessWidget {
             ),
             Expanded(
               child: VerticalDivider(
-                color: Color(0XFFB7935F),
+                color: Theme.of(context).dividerColor,
                 width: 3,
                 thickness: 3,
               ),
