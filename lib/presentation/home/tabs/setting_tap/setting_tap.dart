@@ -27,7 +27,10 @@ class SettingTap extends StatelessWidget {
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Text("Light",
-                    style: Theme.of(context).textTheme.displaySmall),
+                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                        fontSize: 14,
+                      ),
+                ),
               ),
             ),
             SizedBox(
@@ -47,7 +50,10 @@ class SettingTap extends StatelessWidget {
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Text("English",
-                    style: Theme.of(context).textTheme.displaySmall),
+                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                        fontSize: 14,
+                      ),
+                ),
               ),
             ),
           ],

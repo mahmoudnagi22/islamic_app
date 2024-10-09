@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app_r/core/utils/colors_manager.dart';
 import 'package:islami_app_r/core/utils/images_manager.dart';
 import 'package:islami_app_r/presentation/home/tabs/quran_tab/widgets/quran_titel_widget/quran_titel_list_widget.dart';
 import 'package:islami_app_r/presentation/home/tabs/quran_tab/widgets/quran_titel_widget/quran_titel_widget.dart';
@@ -254,7 +253,7 @@ class QuranTap extends StatelessWidget {
             flex: 3,
             child: ListView.separated(
               separatorBuilder: (context, index) => Container(
-                color: ColorsManager.goldeColor,
+                color: Theme.of(context).dividerColor,
                 width: double.infinity,
                 height: 3,
               ),

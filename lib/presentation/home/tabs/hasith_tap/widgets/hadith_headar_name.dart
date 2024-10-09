@@ -12,7 +12,7 @@ class HadithHeadarName extends StatelessWidget {
       width: double.infinity,
       decoration: BoxDecoration(
         border: Border.symmetric(
-          horizontal: BorderSide(color: Theme.of(context).primaryColor),
+          horizontal: BorderSide(color: Theme.of(context).dividerColor),
         ),
       ),
       child: Text(

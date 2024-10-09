@@ -33,12 +33,10 @@ class QuranTitelWidget extends StatelessWidget {
                   style: Theme.of(context).textTheme.headlineLarge,
                 ),
               ),
-              Expanded(
-                child: VerticalDivider(
-                  color: Color(0XFFB7935F),
-                  width: 3,
-                  thickness: 3,
-                ),
+              VerticalDivider(
+                color: Theme.of(context).dividerColor,
+                width: 3,
+                thickness: 3,
               ),
               Expanded(
                 flex: 2,
