@@ -3,6 +3,10 @@ import 'package:islami_app_r/core/utils/colors_manager.dart';
 
 class MyTheme {
   static final ThemeData LigthTheme = ThemeData(
+    colorScheme: ColorScheme.fromSeed(
+        seedColor: ColorsManager.goldeColor,
+        primary: ColorsManager.goldeColor,
+        secondary: ColorsManager.goldeColor),
     primaryColor: ColorsManager.goldeColor,
     appBarTheme: AppBarTheme(
       titleTextStyle: TextStyle(
@@ -70,6 +74,10 @@ class MyTheme {
   );
 
   static final ThemeData DarkTheme = ThemeData(
+    colorScheme: ColorScheme.fromSeed(
+        seedColor: ColorsManager.goldeColor,
+        primary: ColorsManager.goldeColor,
+        secondary: Colors.white),
     primaryColor: ColorsManager.darkBlue,
     appBarTheme: AppBarTheme(
       iconTheme: IconThemeData(
