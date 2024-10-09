@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:islami_app_r/config/theme/my_theme.dart';
 import 'package:islami_app_r/core/utils/routes_manager.dart';
 import 'package:islami_app_r/presentation/home/home.dart';
@@ -12,6 +13,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: [
+        Locale('en'),
+        Locale('ar'),
+      ],
       debugShowCheckedModeBanner: false,
       routes: {
         RoutesManager.quranDetailsRoutName: (_) => QuranDetailsScreen(),
@@ -22,7 +32,7 @@ class MyApp extends StatelessWidget {
       initialRoute: RoutesManager.splashName,
       darkTheme: MyTheme.DarkTheme,
       theme: MyTheme.LigthTheme,
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.dark,
     );
   }
 }

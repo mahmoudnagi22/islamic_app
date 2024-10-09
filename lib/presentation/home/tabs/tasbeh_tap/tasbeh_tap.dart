@@ -5,8 +5,18 @@ class TasbehTap extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.red,
+    return Scaffold(
+      body: Column(
+        children: [
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset("assets/images/head_sebha_logo.png"),
+              Image.asset("assets/images/body_sebha_logo.png"),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
