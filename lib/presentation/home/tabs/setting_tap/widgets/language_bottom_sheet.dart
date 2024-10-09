@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 
-class LanguageBottomSheet extends StatelessWidget {
+class LanguageBottomSheet extends StatefulWidget {
   const LanguageBottomSheet({super.key});
 
+  @override
+  State<LanguageBottomSheet> createState() => _LanguageBottomSheetState();
+}
+
+class _LanguageBottomSheetState extends State<LanguageBottomSheet> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -10,26 +15,38 @@ class LanguageBottomSheet extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text("English", style: Theme.of(context).textTheme.bodyMedium),
-              Icon(
-                Icons.check,
-                size: 30,
-                color: Theme.of(context).dividerColor,
-              ),
-            ],
-          ),
+          builsSelectedLanguage("English"),
           SizedBox(
             height: 18,
           ),
-          Text("Arabic",
-              style: Theme.of(context).textTheme.headlineLarge?.copyWith(
-                    fontSize: 25,
-                  )),
+          builsUnSelectedLanguage("عربي"),
         ],
       ),
+    );
+  }
+
+  Widget builsSelectedLanguage(String text) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(text, style: Theme.of(context).textTheme.bodyMedium),
+        Icon(
+          Icons.check,
+          size: 30,
+          color: Theme.of(context).dividerColor,
+        ),
+      ],
+    );
+  }
+
+  Widget builsUnSelectedLanguage(String text) {
+    return Row(
+      children: [
+        Text(text,
+            style: Theme.of(context).textTheme.headlineLarge?.copyWith(
+                  fontSize: 25,
+                )),
+      ],
     );
   }
 }
