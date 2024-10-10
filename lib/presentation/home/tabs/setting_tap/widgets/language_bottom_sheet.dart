@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
+
+import '../../../../../provider/settings_provider.dart';
 
 class LanguageBottomSheet extends StatefulWidget {
   const LanguageBottomSheet({super.key});
@@ -10,16 +14,32 @@ class LanguageBottomSheet extends StatefulWidget {
 class _LanguageBottomSheetState extends State<LanguageBottomSheet> {
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<SettingsProvider>(context);
+
     return Container(
       padding: EdgeInsets.all(20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          builsSelectedLanguage("English"),
+          InkWell(
+              onTap: () {
+                provider.changeAppLanguage("en");
+              },
+              child: provider.isAppLanguageEn()
+                  ? builsSelectedLanguage(AppLocalizations.of(context)!.english)
+                  : builsUnSelectedLanguage(
+                      AppLocalizations.of(context)!.english)),
           SizedBox(
             height: 18,
           ),
-          builsUnSelectedLanguage("عربي"),
+          InkWell(
+              onTap: () {
+                provider.changeAppLanguage("ar");
+              },
+              child: provider.isAppLanguageAr()
+                  ? builsSelectedLanguage(AppLocalizations.of(context)!.arabic)
+                  : builsUnSelectedLanguage(
+                      AppLocalizations.of(context)!.arabic)),
         ],
       ),
     );

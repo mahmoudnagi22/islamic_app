@@ -2,12 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_app_r/presentation/home/tabs/setting_tap/widgets/language_bottom_sheet.dart';
 import 'package:islami_app_r/presentation/home/tabs/setting_tap/widgets/theme_bottom_sheet.dart';
+import 'package:islami_app_r/provider/settings_provider.dart';
+import 'package:provider/provider.dart';
 
 class SettingTap extends StatelessWidget {
   const SettingTap({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<SettingsProvider>(context);
     return Container(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 60),
@@ -29,7 +32,9 @@ class SettingTap extends StatelessWidget {
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Text(
-                  AppLocalizations.of(context)!.light,
+                  provider.carrenTheme == ThemeMode.light
+                      ? AppLocalizations.of(context)!.light
+                      : AppLocalizations.of(context)!.dark,
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
                         fontSize: 14,
                       ),
@@ -54,7 +59,9 @@ class SettingTap extends StatelessWidget {
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Text(
-                  AppLocalizations.of(context)!.english,
+                  provider.isAppLanguageEn()
+                      ? AppLocalizations.of(context)!.english
+                      : AppLocalizations.of(context)!.arabic,
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
                         fontSize: 14,
                       ),

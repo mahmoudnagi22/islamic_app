@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:islami_app_r/core/utils/images_manager.dart';
 import 'package:islami_app_r/presentation/home/tabs/quran_tab/quran_details/quran_widget.dart';
 import 'package:islami_app_r/presentation/home/tabs/quran_tab/widgets/quran_titel_widget/quran_titel_widget.dart';
+import 'package:islami_app_r/provider/settings_provider.dart';
+import 'package:provider/provider.dart';
 
 class QuranDetailsScreen extends StatefulWidget {
   QuranDetailsScreen({super.key});
@@ -16,12 +17,13 @@ class _QuranDetailsScreenState extends State<QuranDetailsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<SettingsProvider>(context);
     SuraArgs args = ModalRoute.of(context)?.settings.arguments as SuraArgs;
     if (verses.isEmpty) readFile(args.index);
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-            image: AssetImage(ImagesManager.default_bg), fit: BoxFit.fill),
+            image: AssetImage(provider.getBackgroundImage()), fit: BoxFit.fill),
       ),
       child: Scaffold(
         appBar: AppBar(
