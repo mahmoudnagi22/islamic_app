@@ -6,6 +6,8 @@ import 'package:islami_app_r/presentation/home/tabs/quran_tab/quran_tap.dart';
 import 'package:islami_app_r/presentation/home/tabs/radoi_tap/radli_tap.dart';
 import 'package:islami_app_r/presentation/home/tabs/setting_tap/setting_tap.dart';
 import 'package:islami_app_r/presentation/home/tabs/tasbeh_tap/tasbeh_tap.dart';
+import 'package:islami_app_r/provider/settings_provider.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({super.key});
@@ -27,10 +29,11 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<SettingsProvider>(context);
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage(ImagesManager.default_bg),
+          image: AssetImage(provider.getBackgroundImage()),
           fit: BoxFit.fill,
         ),
       ),

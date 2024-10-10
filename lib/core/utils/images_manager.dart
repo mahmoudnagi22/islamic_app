@@ -10,4 +10,5 @@ class ImagesManager {
 
   static const String quranScreenLogo = "assets/images/qur2an_screen_logo.png";
   static const String hadithScreenLogo = "assets/images/hadeth_logo.png";
+  static const String dark_bg = "assets/images/dark_bg.png";
 }

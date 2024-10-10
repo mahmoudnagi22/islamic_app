@@ -7,12 +7,15 @@ import 'package:islami_app_r/presentation/home/home.dart';
 import 'package:islami_app_r/presentation/home/tabs/hasith_tap/hadith_details/hadith_details.dart';
 import 'package:islami_app_r/presentation/home/tabs/quran_tab/quran_details/quran_details_screen.dart';
 import 'package:islami_app_r/presentation/splash/splash_screen.dart';
+import 'package:islami_app_r/provider/settings_provider.dart';
+import 'package:provider/provider.dart';
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<SettingsProvider>(context);
     return MaterialApp(
       localizationsDelegates: [
         AppLocalizations.delegate, // Add this line
@@ -25,7 +28,7 @@ class MyApp extends StatelessWidget {
         Locale('en'),
         Locale('ar'),
       ],
-      locale: Locale("en"),
+      locale: Locale(provider.carrenLanguage),
       debugShowCheckedModeBanner: false,
       routes: {
         RoutesManager.quranDetailsRoutName: (_) => QuranDetailsScreen(),
@@ -36,7 +39,7 @@ class MyApp extends StatelessWidget {
       initialRoute: RoutesManager.splashName,
       darkTheme: MyTheme.DarkTheme,
       theme: MyTheme.LigthTheme,
-      themeMode: ThemeMode.light,
+      themeMode: provider.carrenTheme,
     );
   }
 }
