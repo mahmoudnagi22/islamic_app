@@ -10,16 +10,16 @@ class SebhaWidget extends StatelessWidget {
       alignment: Alignment.center,
       children: [
         Container(
-          width: MediaQuery.of(context).size.width * 0.7,
-          height: MediaQuery.of(context).size.height * 0.7,
+          width: MediaQuery.of(context).size.width * 0.6,
+          height: MediaQuery.of(context).size.height * 0.5,
           child: Image.asset(ImagesManager.bodySebha),
         ),
         Positioned(
           bottom: MediaQuery.of(context).size.height * 0.17,
-          left: 23,
+          left: 26,
           child: Container(
-            width: MediaQuery.of(context).size.width * 0.7,
-            height: MediaQuery.of(context).size.height * 0.7,
+            width: MediaQuery.of(context).size.width * 0.5,
+            height: MediaQuery.of(context).size.height * 0.5,
             child: Image.asset(ImagesManager.headSebha),
           ),
         ),

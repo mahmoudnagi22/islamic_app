@@ -29,6 +29,5 @@ class SettingsProvider extends ChangeNotifier {
 
   bool isAppLanguageAr() {
     return carrenLanguage == 'ar';
-    ;
   }
 }
